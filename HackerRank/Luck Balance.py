@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'luckBalance' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER k
+#  2. 2D_INTEGER_ARRAY contests
+#
+
+def luckBalance(k, contests):
+    # Write your code here
+    
+    contest_sort = sorted(contests, key=lambda x: (-x[1], -x[0]))
+    print(contest_sort)
+    
+    total = 0
+    
+    for i, (L, T) in enumerate(contest_sort):
+        
+        if i >= k and T == 1:
+            total -= L
+            continue
+        else:
+            total += L
+    
+    return total
