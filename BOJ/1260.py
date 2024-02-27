@@ -1,7 +1,7 @@
 from collections import deque
 
 def dfs(x):
-    nodes = sorted(grape[x])
+    nodes = sorted(graph[x])
     
     for node in nodes:
         if visited[node] == 0:
@@ -12,7 +12,7 @@ def dfs(x):
 def bfs(x):
     bfs_q = deque()
     
-    nodes = sorted(grape[x])
+    nodes = sorted(graph[x])
     
     for node in nodes:
         bfs_q.append(node)
@@ -27,20 +27,20 @@ def bfs(x):
             res[1].append(node)
             visited[node] = 1
             
-            for i in sorted(grape[node]):
+            for i in sorted(graph[node]):
                 bfs_q.append(i)
 
 n, m, v = map(int, input().split())
 
 res = [[], []]
 
-grape = [[] for _ in range(n + 1)]
+graph = [[] for _ in range(n + 1)]
 
 for i in range(m):
     a, b = map(int, input().split())
     
-    grape[a].append(b)
-    grape[b].append(a)
+    graph[a].append(b)
+    graph[b].append(a)
 
 visited = [0 for _ in range(n + 1)]
 res[0].append(v)

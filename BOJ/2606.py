@@ -1,7 +1,7 @@
 from collections import deque
 
 def dfs(x):
-    nodes = grape[x]
+    nodes = graph[x]
     
     for node in nodes:
         if visited[node] == 0:
@@ -14,13 +14,13 @@ def dfs(x):
 computer = int(input())
 connect = int(input())
 
-grape = [[] for _ in range(computer + 1)]
+graph = [[] for _ in range(computer + 1)]
 
 for _ in range(connect):
     a, b = map(int, input().split())
     
-    grape[a].append(b)
-    grape[b].append(a)
+    graph[a].append(b)
+    graph[b].append(a)
 
 visited = [0 for _ in range(computer + 1)]
 
