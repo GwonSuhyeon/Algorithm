@@ -48,7 +48,6 @@ for _ in range(N - 1):
     
     parent_node_list.append(parent)
 
-# dfs(0, 1)
 for p in parent_node_list:
     if visited[p] == 0:
         dfs(0, p)
