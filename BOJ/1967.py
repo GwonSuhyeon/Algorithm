@@ -3,7 +3,7 @@ import sys
 
 sys.setrecursionlimit(10000000)
 
-def dfs(parent, current_node):
+def dfs(parent, current_node) -> int: # type: ignore
     
     temp = []
     
