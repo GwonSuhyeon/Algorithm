@@ -26,6 +26,8 @@ def bfs(row, col):
                     visited[new_row][new_col] = 1
                     
                     return dist + 1
+    
+    return 0
 
 input = sys.stdin.readline
 
