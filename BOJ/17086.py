@@ -6,9 +6,7 @@ def bfs(row, col):
     direction = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, -1], [-1, 1]]
     
     visited = [[0 for _ in range(M)] for _ in range(N)]
-    
-    # safe_dist = 99999
-    
+        
     bfs_q = deque()
     bfs_q.append([row, col, 0])
     visited[row][col] = 1
@@ -27,11 +25,7 @@ def bfs(row, col):
                 elif graph[new_row][new_col] == 1 and visited[new_row][new_col] == 0:
                     visited[new_row][new_col] = 1
                     
-                    # safe_dist = min(safe_dist, dist + 1)
                     return dist + 1
-    
-    # return safe_dist
-
 
 input = sys.stdin.readline
 
