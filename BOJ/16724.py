@@ -9,8 +9,6 @@ def dfs(row, col):
     
     new_row, new_col = row + y, col + x
     
-    
-    
     if visited[new_row][new_col] == 0:
         visited[new_row][new_col] += 1
         already = dfs(new_row, new_col)
